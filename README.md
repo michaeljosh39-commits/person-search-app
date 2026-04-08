@@ -6,6 +6,10 @@ Person Search App is a full-stack Next.js application for managing people record
 
 [person-search-app-five.vercel.app](https://person-search-app-five.vercel.app/)
 
+<img width="2559" height="1467" alt="image" src="https://github.com/user-attachments/assets/f8309a04-363b-44c1-bfcc-41231bf4cbe1" />
+<img width="2559" height="1464" alt="image" src="https://github.com/user-attachments/assets/4cc98a9b-6a1e-4136-85fc-5607dcb8d95a" />
+
+
 ## Live Pages
 
 - Main app: `/`
