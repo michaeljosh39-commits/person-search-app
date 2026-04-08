@@ -1,27 +1,30 @@
 import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Twitter } from 'lucide-react'
+import { Database, Github, Layers, Server, Smartphone } from 'lucide-react'
 
 function ProjectOverview() {
   return (
     <Card className="mb-8">
       <CardHeader>
-        <CardTitle>Project Overview</CardTitle>
+        <CardTitle>Application Architecture</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-4">
         <p className="mb-4">
-          Person Search is a demonstration project showcasing the power of Next.js, React, and modern web technologies. 
-          It provides a simple yet effective interface for searching and displaying user information.
+          Person App is built with Next.js App Router and uses server actions for data mutations.
+          This keeps Create, Read, Update, and Delete logic close to the UI while maintaining type safety.
         </p>
         <p className="mb-4">
-          This project utilizes Next.js 15 with the App Router, React 19, TypeScript, and a variety of 
-          cutting-edge libraries to create a responsive and accessible user experience.
+          User interactions are handled by client components, while data persistence is handled by
+          Prisma Client on the server. The result is a responsive and maintainable full-stack flow.
         </p>
-        <p>
-          Key features include asynchronous search functionality, server-side filtering, 
-          and a dark mode toggle for user comfort.
-        </p>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="flex items-center gap-2 text-sm"><Layers className="h-4 w-4" /> Next.js 16 App Router</div>
+          <div className="flex items-center gap-2 text-sm"><Server className="h-4 w-4" /> Server Actions for CRUD</div>
+          <div className="flex items-center gap-2 text-sm"><Database className="h-4 w-4" /> Prisma ORM + Neon PostgreSQL</div>
+          <div className="flex items-center gap-2 text-sm"><Smartphone className="h-4 w-4" /> Responsive mobile-first UI</div>
+        </div>
       </CardContent>
     </Card>
   )
@@ -31,18 +34,13 @@ function SocialLinks() {
   return (
     <div className="flex flex-wrap gap-4">
       <Button asChild>
-        <Link href="https://www.linkedin.com/in/callumbir/" target="_blank" rel="noopener noreferrer">
-          <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-        </Link>
-      </Button>
-      <Button asChild variant="outline">
-        <Link href="https://github.com/gocallum" target="_blank" rel="noopener noreferrer">
+        <Link href="https://github.com/Shuji0121/person-search-app" target="_blank" rel="noopener noreferrer">
           <Github className="mr-2 h-4 w-4" /> GitHub
         </Link>
       </Button>
       <Button asChild variant="secondary">
-        <Link href="https://x.com/callumbir">
-          <Twitter className="mr-2 h-4 w-4" /> Contact Me
+        <Link href="/database">
+          <Database className="mr-2 h-4 w-4" /> Database Documentation
         </Link>
       </Button>
     </div>
@@ -53,16 +51,16 @@ function DeveloperInfo() {
   return (
     <Card className="mb-8">
       <CardHeader>
-        <CardTitle>About the Developer</CardTitle>
+        <CardTitle>Technology Stack</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="mb-4">
-          Hi, I&apos;m <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">Callum Bir</code>, the developer behind Person Search. I&apos;m passionate about creating 
-          efficient, user-friendly web applications using the latest technologies.
+          Frontend is built with React 19, Tailwind CSS, and shadcn/ui components.
+          Validation uses Zod and React Hook Form to enforce input correctness.
         </p>
         <p className="mb-4">
-          This project serves as a demonstration of my skills in Next.js, React, and modern frontend development.
-          I&apos;m always looking to learn and improve, so feel free to reach out with any questions or feedback!
+          Backend data operations use Prisma with a relational schema and migrations,
+          ensuring data consistency for person records.
         </p>
         <SocialLinks />
       </CardContent>
